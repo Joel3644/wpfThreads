@@ -129,4 +129,5 @@ private void btnClear_Click(object sender, RoutedEventArgs e) {
 }
 ```
 Ci ritroveremo quindi con questa situazione in conclusione:
-![result]()
+<br>
+![result](https://github.com/Joel3644/wpfThreads/blob/main/Img/WPFThreadResult.png?raw=true)
