@@ -6,7 +6,7 @@ In precedenza abbiamo visto come si fa un'applicazione Wpf ora tentiamo di reali
 Intanto per realizzarlo creiamo un pulsante come abbiamo visto precedentemente.
 Facciamo quindi una funzione che scriva i numeri da 0 a N e si attiva quando noi clicchiamo il pulsante.
 
-```
+```cs
 private void incrementa(){
 	for(int i = 0; x <= GIRI; x++){
 		lblCounter.Text = x.ToString();  
