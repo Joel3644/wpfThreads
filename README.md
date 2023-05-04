@@ -19,7 +19,7 @@ Se facciamo però partire la nostra app così e clicchiamo il pulsante quello ch
 Di conseguenza quindi per vedere il numero effettivamente aumentare dobbiamo aggiungere un delay per aumentare il tempo che ci mette a raggiungere il numero massimo.
 Per aggiungere un delay possiamo usare la funzione di sleep che è:
 
-```
+```cs
 thread.sleep(1000);  	 //1 sec
 ```
 
@@ -32,14 +32,14 @@ Anche così però non riusciamo a vedere il numero che si aumenta ma vedremo sol
 
 Per evitare questo possiamo creare un nuovo thread e poi lo istanziamo e avviamo.
 
-```
+```cs
 private void Button_Click(object sender, RoutedEventArgs e){
 	Thread thread1 = new Thread(Incrementa1);
 	thread.Start();
 }
 ```
 e aggiorniamo il metodo che chiamiamo IncrementCounter1 in questo modo:
-```
+```cs
 private void incrementa1() {
     for (int x = 0; x < GIRI1; x++) {
 	lock (_locker) {
@@ -68,7 +68,7 @@ Faremo altri 2 metodi come quello di Incrementa1 che chiameremo Incrementa2 e In
 <br><br>
 Dovremo quindi modificare di conseguenza anche il metodo Button_Click facendo le seguenti modifiche.
 
-```
+```cs
 private void Button_Click(object sender, RoutedEventArgs e) {
     btnGo.IsEnabled = false;     //disabilita il pulsante una volta premuto
 
@@ -103,7 +103,7 @@ private void Button_Click(object sender, RoutedEventArgs e) {
     thread4.Start();
 }
 ```
-```
+```cs
 btnGo.IsEnabled = false;     
 //disabilita il pulsante una volta premuto
 
@@ -111,7 +111,7 @@ btnGo.IsEnabled = true;
 //pulsante viene riattivato dato che i processi sono finiti su tutti i thread
 ```
 Creiamo infine un pulsante per resettare i counter e le progress bar che aggiungiamo per vedere quanto manca a un processo per finire di calcolare.
-```
+```cs
 private void btnClear_Click(object sender, RoutedEventArgs e) {
     _counter1 = 0;
     _counter2 = 0;
